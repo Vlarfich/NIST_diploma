@@ -25,6 +25,7 @@ public class FrequencyTest {
         for (int i = 0; i < 1000; i++) {
             String temp = Integer.toBinaryString(r.nextInt((int) Math.pow(2, 32)) + 4);//2^16
             double result = NistTest.frequencyTest(temp).getpValue();
+            System.out.println("result: " + result);
             if (result > 1 || result < 0) {
                 throw new RuntimeException("Failed frequency test on sequence: " + temp);
             }
