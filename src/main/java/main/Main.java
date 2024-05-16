@@ -10,6 +10,8 @@ import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Main {
 
@@ -32,7 +34,7 @@ public class Main {
         }
 
 
-        try (InputStream inputStream = new FileInputStream("qrbg-1M.bin");) {
+        try (InputStream inputStream = Files.newInputStream(Paths.get("qrbg-1M.bin"))) {
             int byteRead = -1;
 
             while ((byteRead = inputStream.read()) != -1) {
